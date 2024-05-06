@@ -73,3 +73,67 @@
 
 
 
+/* header components */
+.header-component{
+  background-image: url('https://repository-images.githubusercontent.com/383784054/121597d4-cc97-4ff6-93aa-7d1bb8af9ff3');
+  height: 300px;
+  width: 100%;
+}
+
+
+
+.header-component h1{
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  color: black;
+}
+
+
+
+
+/* filter component */
+.filter-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.div {
+  width: 700px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.checkbox-item {
+  margin-bottom: 5px;
+}
+
+.checkbox-item input[type="checkbox"] {
+  margin-right: 5px; 
+}
+
+.checkbox-item label {
+  font-weight: bold;
+  color: #333;
+}
+
+.div button {
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+  background-color: #666666c7;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .div {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
