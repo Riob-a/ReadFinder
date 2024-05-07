@@ -1,19 +1,30 @@
 import React from "react";
-import "./form.css"
+import "./Form.css"
 
-function Form(){
+function FormData(){
 return(
-<div>
-    <form>
-        <input>Id:</input>
-        <input>Category:</input>
-        <input>Image:</input>
-        <input>Description: </input>
-        <input>Price:</input>
+    <div>
+        <legend>Welcome to ReadFinder!</legend>
+    <form >
+        <p>Book Details</p>
+
+        <input type="text" placeholder="ID"/>  <br/> <br/>
+
+        <input type="text" placeholder="Category"/> <br/> <br/>
+
+        <input type="text" placeholder="Description"/> <br/> <br/>
+
+        <input type="text"placeholder="Price"/> <br/> <br/>
+      
+        <input type="file" placeholder="Image" id="image" accept="image/*"/> <br/> <br/>
+
+        <button id="btn" type="submit">Add a book</button> <br/> <br/>
+
+        <footer id="footerform">Get to add a book of your choice.</footer>
     </form>
-    
-</div>
+   
+    </div>
 )
 
 }
-export default Form
+export default FormData
