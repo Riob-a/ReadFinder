@@ -2,7 +2,7 @@ import React from 'react'
 
 function BookInfo() {
   return (
-    <div>BookInfo</div>
+    <><div>BookInfo</div><p>Books</p></>
   )
 }
 
