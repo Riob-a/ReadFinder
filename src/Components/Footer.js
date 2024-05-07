@@ -6,11 +6,11 @@ function Footer(){
     return(
         <div className="">
 
-         <footer class="footer p-5 bg-warning"> 
+         <footer class="footer p-5 bg"> 
             <div class="container"> 
-              <div class="row"> 
-                <div class="col-md-3"> 
-                    <h2>ReadFinder</h2> 
+              <div class=""> 
+                <div class=""> 
+                    <h2 className="text-center">ReadFinder copyright-2024</h2> 
                 </div> 
               </div> 
             </div> 

@@ -4,24 +4,26 @@ import React from "react";
 
 function Navbar(){
     return(
-    <nav className="navbar navbar-expand-lg bg-warning">
-  <div className="container-fluid">
-    <a className="navbar-brand" href="#"><b>ReadFinder</b></a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarText">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Pricing</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+      <nav class="navbar navbar-expand-lg navbar-light bg">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand mr-10" href="#">Hidden brand</a>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo01"> 
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+       
+      </div>
+    </nav>
 );
 }
 export default Navbar;
