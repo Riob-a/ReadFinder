@@ -1,0 +1,84 @@
+{
+    "books": [
+        {
+            "id": 1,
+            "title": "The Hunger Games",
+            "category": "Action",
+            "description": "As punishment for a failed rebellion many years before, each district must annually choose two tributes, one boy and one girl between the ages of twelve and eighteen, to fight to the death in the annual Hunger Games, until one victor remains",
+            "picture": "https://en.wikipedia.org/wiki/File:The_Hunger_Games.jpg",
+            "price": 2000
+        },
+        {
+            "id": 2,
+            "title": "The Lord of The Rings",
+            "category":"Fantasy",
+            "description":"Set in the fictional world of Middle-earth, the books follow the hobbit Frodo Baggins as he and the Fellowship embark on a quest to destroy the One Ring, to ensure the destruction of its maker, the Dark Lord Sauron.",
+            "picture":"https://en.wikipedia.org/wiki/File:First_Single_Volume_Edition_of_The_Lord_of_the_Rings.gif",
+            "price": 3000
+        },
+        {
+            "id": 3,
+            "title": "The Hobbit",
+            "category":"Fantasy",
+            "description":"The Hobbit is a children's fantasy novel by English author J. R. R. Tolkien.",
+            "picture":"https://m.media-amazon.com/images/I/712cDO7d73L._SY466_.jpg",
+            "price": 2500
+        },
+        {
+            "id": 4,
+            "title": "Rich Dad Poor Dad",
+            "category": "Finance",
+            "description": "Robert's story of growing up with two dads — his real father and the father of his best friend, his rich dad — and the ways in which both men shaped his thoughts about money and investing",
+            "picture":"https://m.media-amazon.com/images/I/81bsw6fnUiL._SY466_.jpg",
+            "price": 1500
+        },
+        {
+            "id": 5,
+            "title": "Goosebumps:Night of the living Dummy",
+            "category": "Horror",
+            "description": "Goosebumps: Night of the Living Dummy was written by R. L. Stine. This is the 7th book in the Goosebumps series, published in May of 1993. The Cover Artist was Tim Jacobus",
+            "picture":"https://static.wikia.nocookie.net/goosebumps/images/b/b6/Night_of_the_Living_Dummy_-_Reprint.jpg/revision/latest?cb=20170407124550",
+            "price": 1300
+        },
+        {
+            "id": 6,
+            "title": "The Girl on the Train",
+            "category": "Thriller",
+            "description": "The Girl on the Train is a 2015 novel by British author Paula Hawkins.",
+            "picture":"https://upload.wikimedia.org/wikipedia/en/thumb/5/50/The_Girl_On_The_Train_%28US_cover_2015%29.png/220px-The_Girl_On_The_Train_%28US_cover_2015%29.png",
+            "price": 1200
+        },
+        {
+            "id": 7,
+            "title": "The Sacred Mushroom and the Cross",
+            "category": "Theological",
+            "description": "The Sacred Mushroom and the Cross is a 1999 novel by John M. Allegro",
+            "picture":"https://m.media-amazon.com/images/I/513Vc5q1UVL._SY466_.jpg",
+            "price": 1000
+        },
+        {
+            "id": 8,
+            "title": "My Life in Crime",
+            "category":"Action",
+            "description":"It is a fictionalized account of Kiriamiti's criminality in Kenya during the 1960s and 1970s. The novel details Kiriamiti's crimes under the alias Jack Zollo that led to his imprisonment.",
+            "picture":"https://upload.wikimedia.org/wikipedia/en/thumb/6/61/MyLifeInCrime.jpg/220px-MyLifeInCrime.jpg",
+            "price": 1000
+        },
+        {
+            "id": 9,
+            "title":"Son of Fate",
+            "category":"Drama",
+            "description":"The life of the 'Son of Fate' is a grim struggle for survival, after his release from prison. He tries his luck at farming, and odd jobs in the city, but everything fails, and he finds himself on the wrong side of the law again. But a glimmer of hope comes when he rescues a tycoon",
+            "picture": "https://books.google.co.ke/books/content?id=6EPiGlqGKmoC&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE73KHNuID0Ik-NgM8U-lvdzgN_iKN_qx52WMama4M59-9h65XLxwUuBupTDjAm9LCGPFfIMd3Vkl_VMwi4B5uk_YBd_tOaiEG1qJDLJgVBkkz_wXgmo2J8cRA1PCELtApY2qRZHf",
+            "price":1200
+        },
+        {
+            "id": 10,
+            "title": "Oliver Twist",
+            "category":"Drama",
+            "description": "The story follows the titular orphan, who, after being raised in a workhouse, escapes to London, where he meets a gang of juvenile pickpockets led by the elderly criminal Fagin, discovers the secrets of his parentage, and reconnects with his remaining family.",
+            "picture": "https://m.media-amazon.com/images/I/81QGqaKWjXL._SY466_.jpg",
+            "price": 1000
+        }
+    ]
+}
