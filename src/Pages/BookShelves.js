@@ -1,5 +1,4 @@
 import React from 'react'
-import BookList from '../Components/BookList'
 
 function BookShelves() {
   return (

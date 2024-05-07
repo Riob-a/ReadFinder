@@ -5,6 +5,7 @@ import HomePage from './Pages/HomePage'
 import BookShelves from './Pages/BookShelves';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
+import FormData from './Pages/Form';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage/>} />
         <Route path='/MyShelves' element={<BookShelves/>} />
+        <Route path='/form' element={<FormData/>} />
       </Routes>
       <Footer />
       </BrowserRouter>
