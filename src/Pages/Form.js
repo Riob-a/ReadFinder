@@ -1,19 +1,27 @@
 import React from "react";
-import "./form.css"
+import "./Form.css"
 
-function Form(){
+function FormData(){
 return(
-<div>
-    <form>
-        <input>Id:</input>
-        <input>Category:</input>
-        <input>Image:</input>
-        <input>Description: </input>
-        <input>Price:</input>
+    <div>
+    <form >
+        <label for="Id">Id: </label> 
+        <input type="text"/> <br/>
+
+        <label for="Id">Category: </label>
+        <input type="text"/> <br/>
+       
+        <label for="Id">Image: </label>
+        <input type="text"/> <br/>
+
+        <label for="Id">Description: </label>
+        <input type="text"/> <br/>
+
+        <label for="Id">Price: </label>
+        <input type="text"/> <br/>
     </form>
-    
-</div>
+    </div>
 )
 
 }
-export default Form
+export default FormData
