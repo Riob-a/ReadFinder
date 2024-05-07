@@ -12,7 +12,8 @@ return(
         <input>Price:</input>
     </form>
     
-</div>)
+</div>
+)
 
 }
 export default Form
