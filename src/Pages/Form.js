@@ -4,23 +4,25 @@ import "./Form.css"
 function FormData(){
 return(
     <div>
+        <legend>Welcome to ReadFinder!</legend>
     <form >
-        <p id="p1">Welcome to ReadFinder</p>
-        <label for="Id">Id: </label> 
-        <input type="text"/> <br/>
+        <p>Book Details</p>
 
-        <label for="Id">Category: </label>
-        <input type="text"/> <br/>
-       
-        <label for="Id">Image: </label>
-        <input type="text"/> <br/>
+        <input type="text" placeholder="ID"/>  <br/> <br/>
 
-        <label for="Id">Description: </label>
-        <input type="text"/> <br/>
+        <input type="text" placeholder="Category"/> <br/> <br/>
 
-        <label for="Id">Price: </label>
-        <input type="text"/> <br/>
+        <input type="text" placeholder="Description"/> <br/> <br/>
+
+        <input type="text"placeholder="Price"/> <br/> <br/>
+      
+        <input type="file" placeholder="Image" id="image" accept="image/*"/> <br/> <br/>
+
+        <button id="btn" type="submit">Add a book</button> <br/> <br/>
+
+        <footer id="footerform">Get to add a book of your choice.</footer>
     </form>
+   
     </div>
 )
 
