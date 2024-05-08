@@ -10,16 +10,14 @@ import BookInfo from './Pages/BookInfo';
 
 
 function App() {
-  const [addBook, setAddBook] = useState({});
-
-  useEffect(() => {
-    if (Object.keys(addBook).length > 0) {
+  const handlePost = async (data) => {
+    if (Object.keys(data).length > 0) {
       fetch("https://project2-db.onrender.com/books", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(addBook)
+        body: JSON.stringify(data)
       })
         .then((res) => {
           if (!res.ok) {
@@ -29,14 +27,12 @@ function App() {
         })
         .then((data) => {
           console.log("Book successfully added:", data);
-          
-          // Optionally, you can perform any additional actions after successful addition
         })
         .catch((error) => {
           console.error("Error adding book:", error);
         });
     }
-  }, [addBook]);
+  };
 
   return (
     <div>
@@ -45,7 +41,7 @@ function App() {
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/MyShelves' element={<BookShelves />} />
-          <Route path='/form' element={<FormData setAddBook={setAddBook} />} />
+          <Route path='/form' element={<FormData handlePost={handlePost} />} />
           <Route path='/bookinfo' element={<BookInfo />} />
         </Routes>
         <Footer />
