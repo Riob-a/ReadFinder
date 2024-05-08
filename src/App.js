@@ -10,6 +10,8 @@ import BookInfo from './Pages/BookInfo';
 
 
 function App() {
+  const [books, setBooks] = useState([]);
+  
   const handlePost = async (data) => {
     if (Object.keys(data).length > 0) {
       fetch("https://project2-db.onrender.com/books", {
@@ -34,15 +36,68 @@ function App() {
     }
   };
 
+
+ 
+
+  const getBooks = async () => {
+    try {
+      const response = await fetch("https://project2-db.onrender.com/books");
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      setBooks(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    getBooks();
+  }, []);
+
+
+
+  const handleBuy = async (bookId, bookDetails) => {
+    console.log();
+    try {
+      const bookData = {
+        id: bookDetails.id,
+        title: bookDetails.title,
+        category: bookDetails.category,
+        picture: bookDetails.picture,
+        description: bookDetails.description,
+        price: bookDetails.price
+      };
+
+      await fetch(`https://project2-db.onrender.com/MyShelf`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify( bookData ),
+      });
+
+      await fetch(`https://project2-db.onrender.com/books/${bookId}`,{ method:'DELETE'});
+
+       alert('You have Added The Book To Your Shelf')
+       getBooks()
+    } catch (error) {
+      console.error('Error buying book:', error);
+    }
+  };
+
+
+
   return (
     <div>
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/MyShelves' element={<BookShelves />} />
+          <Route path="/" element={<HomePage books={books} handleBuy={handleBuy}/>}/>
           <Route path='/form' element={<FormData handlePost={handlePost} />} />
-          <Route path='/bookinfo' element={<BookInfo />} />
+          <Route path="/MyShelves" element={<BookShelves />} />
+          <Route path="/bookinfo/:id"  element={<BookInfo handleBuyNow={handleBuy} getBooks={getBooks} />}/>
         </Routes>
         <Footer />
       </BrowserRouter>

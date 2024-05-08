@@ -3,7 +3,7 @@ import Header from '../Components/Header';
 import Filter from '../Components/Filter';
 import BookList from '../Components/BookList';
 
-function HomePage({ books }) {
+function HomePage({ books, handleBuy }) {
 
   return (
     <div>
@@ -14,7 +14,7 @@ function HomePage({ books }) {
 
     <div className="column-grid">
       {books.map((book) => (
-        <BookList key={book.id} book={book} />
+       <BookList key={book.id} book={book} handleBuy={(bookId, bookDetails) => handleBuy(bookId, bookDetails)}/>
       ))}
     </div>
   </div>
