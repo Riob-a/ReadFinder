@@ -20,7 +20,6 @@ function App() {
       }
       const data = await response.json();
       setBooks(data);
-      // setFilteredBooks(data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -30,15 +29,71 @@ function App() {
     getBooks();
   }, []);
 
+  const handlePost = async (data) => {    
+    if (Object.keys(data).length > 0) {
+      fetch("http://localhost:3001/books", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error('Failed to add book');
+          }
+          return res.json();
+        })
+        .then((data) => {
+          console.log("Book successfully added:", data);
+        })
+        .catch((error) => {
+          console.error("Error adding book:", error);
+        });
+    }
+  };
+
+
+  const handleBuy = async (bookId, bookDetails) => {
+    console.log();
+    try {
+      const bookData = {
+        id: bookDetails.id,
+        title: bookDetails.title,
+        category: bookDetails.category,
+        picture: bookDetails.picture,
+        description: bookDetails.description,
+        price: bookDetails.price
+      };
+
+      await fetch(`http://localhost:3001/MyShelf`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify( bookData ),
+      });
+
+      await fetch(`http://localhost:3001/books/${bookId}`,{ method:'DELETE'});
+
+       alert('You have Added The Book To Your Shelf')
+       getBooks()
+    } catch (error) {
+      console.error('Error buying book:', error);
+    }
+  };
+
+
+
   return (
     <div>
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<HomePage books={books} />}/>
+          <Route path="/" element={<HomePage books={books} handleBuy={handleBuy}/>}/>
           <Route path="/MyShelves" element={<BookShelves />} />
-          <Route path="/form" element={<FormData />} />
-          <Route path="/bookinfo/:id"  element={<BookInfo/>}/>
+          <Route path="/form" element={<FormData handlePost={handlePost} />} />
+          <Route path="/bookinfo/:id"  element={<BookInfo handleBuyNow={handleBuy} getBooks={getBooks} />}/>
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -1,16 +1,62 @@
 // BookInfo.js
-import React from 'react';
+import React, { useEffect, useState } from 'react'
 import './BookInfo.css';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 
-function BookInfo() {
-    const handleDelete = (id) => {
-        //console.log(Deleting book with id ${id});
+function BookInfo({getBooks,handleBuyNow}) {
+    const [book, setBook] = useState([]);
+    const {id} = useParams()
+    const navigate = useNavigate()
+
+    const getBotById = async () => {
+        try {
+          const response = await fetch(`http://localhost:3001/books/${id}`);
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          const data = await response.json();
+          setBook(data);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      };
+    
+      useEffect(() => {
+        getBotById();
+      }, []);
+
+
+    const handleDelete = async(id) => {
+        try {
+            const deleteResponse = await fetch(`http://localhost:3001/books/${id}`, {
+              method: 'DELETE',
+            });
+            if (!deleteResponse.ok) {
+              throw new Error("Failed to delete bot from backend");
+            }
+      
+           alert("Book Deleted successfully!");
+             navigate("/")
+             getBooks()
+          } catch (error) {
+            console.error('Error discharging bot:', error);
+          }
     };
+    
 
-const handleBuyNow = (id) => {
-    console.log(`Buying book with id ${id}`);
-};
+    const buyNow = async (id) => {
+      try {
+          await handleBuyNow(id,book);
+          navigate('/');
+          alert('You have added the book to your shelf.');
+     
+      } catch (error) {
+        console.error('Error buying book:', error);
+      }
+    };
+    
+    
 
 return (
     <div>
@@ -18,22 +64,24 @@ return (
         <div className="books">
           
                 <div className="book">
-                    <img src='https://github.com/MohamedAhmeDdev/eBook-Next-/blob/master/server/Images/1671463217357.jpg?raw=true' />
+                    <img src={book.picture} />
                     <div className="book-details">
-                        <h2>book.title</h2>
-                        <p><span style={{fontWeight: 'bold'}}>Category:</span> book.category</p>
-                        <p><span style={{fontWeight: 'bold'}}>Description:</span> book.description</p>
-                        <p><span style={{fontWeight: 'bold'}}>Price:</span> $book.price</p>
-                        <button className='back' onClick={() => console.log('Back to home')}>Back Home</button>
-                        <button className='buy'>Buy Now</button>
-                        <button className='delete'>Delete</button>
+                        <h2>{book.title}</h2>
+                        <p><span style={{fontWeight: 'bold'}}>Category:</span> {book.category}</p>
+                        <p><span style={{fontWeight: 'bold'}}>Description:</span> {book.description}</p>
+                        <p><span style={{fontWeight: 'bold'}}>Price:</span> ${book.price}</p>
+                        <Link to='/'>
+                         <button className='back'>Back Home</button>
+                        </Link>
+                        <button className="buy" onClick={() => buyNow(book.id)}>Buy Now</button>
+
+                        <button className='delete' onClick={() => handleDelete(book.id)}>Delete</button>
                       
                     </div>
                 </div>
-
-               
+       
+   
         </div>
-        
     </div>
 );
 }
