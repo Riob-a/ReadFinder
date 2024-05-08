@@ -29,9 +29,10 @@ return (
                         <button onClick={() => console.log('Back to home')}>Back Home</button>
                     </div>
                 </div>
-       
-   
+
+               
         </div>
+        
     </div>
 );
 }
