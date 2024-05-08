@@ -5,7 +5,7 @@ import './BookInfo.css';
 
 function BookInfo() {
     const handleDelete = (id) => {
-        console.log(Deleting book with id ${id});
+        //console.log(Deleting book with id ${id});
     };
 
 const handleBuyNow = (id) => {
@@ -14,23 +14,24 @@ const handleBuyNow = (id) => {
 
 return (
     <div>
-        <h1>Book Information</h1>
+        <h1 className='h1'>Book Information</h1>
         <div className="books">
           
                 <div className="book">
                     <img src='https://github.com/MohamedAhmeDdev/eBook-Next-/blob/master/server/Images/1671463217357.jpg?raw=true' />
                     <div className="book-details">
                         <h2>book.title</h2>
-                        <p>Category: book.category</p>
-                        <p>Description: book.description</p>
-                        <p>Price: $book.price</p>
-                        <button onClick={() => handleBuyNow(book.id)}>Buy Now</button>
-                        <button onClick={() => handleDelete(book.id)}>Delete</button>
+                        <p><span style={{fontWeight: 'bold'}}>Category:</span> book.category</p>
+                        <p><span style={{fontWeight: 'bold'}}>Description:</span> book.description</p>
+                        <p><span style={{fontWeight: 'bold'}}>Price:</span> $book.price</p>
+                        <button>Buy Now</button>
+                        <button>Delete</button>
+                        <button onClick={() => console.log('Back to home')}>Back Home</button>
                     </div>
                 </div>
-        
+       
+   
         </div>
-        <button onClick={() => console.log('Back to home')}>Back Home</button>
     </div>
 );
 }

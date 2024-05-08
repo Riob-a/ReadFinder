@@ -6,6 +6,7 @@ import BookShelves from './Pages/BookShelves';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import FormData from './Pages/Form';
+import BookInfo from './Pages/BookInfo';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element={<HomePage/>} />
         <Route path='/MyShelves' element={<BookShelves/>} />
         <Route path='/form' element={<FormData/>} />
+        <Route path='/bookinfo' element={<BookInfo/>} />
       </Routes>
       <Footer />
       </BrowserRouter>
