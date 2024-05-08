@@ -80,5 +80,23 @@
             "picture": "https://m.media-amazon.com/images/I/81QGqaKWjXL._SY466_.jpg",
             "price": 1000
         }
+    ],
+    "MyShelf": [
+        {
+            "id": 9,
+            "title":"Son of Fate",
+            "category":"Drama",
+            "description":"The life of the 'Son of Fate' is a grim struggle for survival, after his release from prison. He tries his luck at farming, and odd jobs in the city, but everything fails, and he finds himself on the wrong side of the law again. But a glimmer of hope comes when he rescues a tycoon",
+            "picture": "https://books.google.co.ke/books/content?id=6EPiGlqGKmoC&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE73KHNuID0Ik-NgM8U-lvdzgN_iKN_qx52WMama4M59-9h65XLxwUuBupTDjAm9LCGPFfIMd3Vkl_VMwi4B5uk_YBd_tOaiEG1qJDLJgVBkkz_wXgmo2J8cRA1PCELtApY2qRZHf",
+            "price":1200
+        },
+        {
+            "id": 10,
+            "title": "Oliver Twist",
+            "category":"Drama",
+            "description": "The story follows the titular orphan, who, after being raised in a workhouse, escapes to London, where he meets a gang of juvenile pickpockets led by the elderly criminal Fagin, discovers the secrets of his parentage, and reconnects with his remaining family.",
+            "picture": "https://m.media-amazon.com/images/I/81QGqaKWjXL._SY466_.jpg",
+            "price": 1000
+        }
     ]
 }
