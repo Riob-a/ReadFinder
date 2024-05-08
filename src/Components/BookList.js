@@ -16,7 +16,7 @@ function BookList({ book }) {
               {" "}
               <small>{book.description}</small>
               </Link>
-            <p>{book.price}</p>
+            <p>Ksh: {book.price}</p>
             <div className="div-button">
               <button className="buy-button">Buy Now</button>
             </div>
