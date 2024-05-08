@@ -29,29 +29,6 @@ function App() {
     getBooks();
   }, []);
 
-  const handlePost = async (data) => {    
-    if (Object.keys(data).length > 0) {
-      fetch("http://localhost:3001/books", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      })
-        .then((res) => {
-          if (!res.ok) {
-            throw new Error('Failed to add book');
-          }
-          return res.json();
-        })
-        .then((data) => {
-          console.log("Book successfully added:", data);
-        })
-        .catch((error) => {
-          console.error("Error adding book:", error);
-        });
-    }
-  };
 
 
   const handleBuy = async (bookId, bookDetails) => {
@@ -66,7 +43,7 @@ function App() {
         price: bookDetails.price
       };
 
-      await fetch(`http://localhost:3001/MyShelf`, {
+      await fetch(`https://project2-db.onrender.com/MyShelf`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -74,7 +51,7 @@ function App() {
         body: JSON.stringify( bookData ),
       });
 
-      await fetch(`http://localhost:3001/books/${bookId}`,{ method:'DELETE'});
+      await fetch(`https://project2-db.onrender.com/books/${bookId}`,{ method:'DELETE'});
 
        alert('You have Added The Book To Your Shelf')
        getBooks()
@@ -92,7 +69,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage books={books} handleBuy={handleBuy}/>}/>
           <Route path="/MyShelves" element={<BookShelves />} />
-          <Route path="/form" element={<FormData handlePost={handlePost} />} />
+          <Route path="/form" element={<FormData/>} />
           <Route path="/bookinfo/:id"  element={<BookInfo handleBuyNow={handleBuy} getBooks={getBooks} />}/>
         </Routes>
         <Footer />
