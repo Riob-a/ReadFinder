@@ -1,38 +1,40 @@
 // BookInfo.js
 import React from 'react';
 import './BookInfo.css';
-import data from './db.json';
+
 
 function BookInfo() {
     const handleDelete = (id) => {
-        console.log(`Deleting book with id ${id}`);
+        //console.log(Deleting book with id ${id});
     };
 
-    const handleBuyNow = (id) => {
-        console.log(`Buying book with id ${id}`);
-    };
+const handleBuyNow = (id) => {
+    console.log(`Buying book with id ${id}`);
+};
 
-    return (
-        <div>
-            <h1>Book Information</h1>
-            <div className="books">
-                {data.books.map(book => (
-                    <div key={book.id} className="book">
-                        <img src={book.picture} alt={book.title} />
-                        <div className="book-details">
-                            <h2>{book.title}</h2>
-                            <p>Category: {book.category}</p>
-                            <p>Description: {book.description}</p>
-                            <p>Price: ${book.price}</p>
-                            <button onClick={() => handleBuyNow(book.id)}>Buy Now</button>
-                            <button onClick={() => handleDelete(book.id)}>Delete</button>
-                        </div>
+return (
+    <div>
+        <h1 className='h1'>Book Information</h1>
+        <div className="books">
+          
+                <div className="book">
+                    <img src='https://github.com/MohamedAhmeDdev/eBook-Next-/blob/master/server/Images/1671463217357.jpg?raw=true' />
+                    <div className="book-details">
+                        <h2>book.title</h2>
+                        <p><span style={{fontWeight: 'bold'}}>Category:</span> book.category</p>
+                        <p><span style={{fontWeight: 'bold'}}>Description:</span> book.description</p>
+                        <p><span style={{fontWeight: 'bold'}}>Price:</span> $book.price</p>
+                        <button className='back' onClick={() => console.log('Back to home')}>Back Home</button>
+                        <button className='buy'>Buy Now</button>
+                        <button className='delete'>Delete</button>
+                      
                     </div>
-                ))}
-            </div>
-            <button onClick={() => console.log('Back to home')}>Back Home</button>
+                </div>
+       
+   
         </div>
-    );
+    </div>
+);
 }
 
 export default BookInfo;
