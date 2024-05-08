@@ -14,6 +14,9 @@ function BookShelves() {
                     <p>name</p>
                     <small>Ipsum duis nulla non reprehenderit labore incididunt.Ex amet sit minim et. </small>
                     <p>ksh 1000</p>
+                    <div className='div-button'>
+                      <button class="delete-button">Delete</button>
+                    </div>
                 </div>
         </div>
         <div className="book-div">
@@ -24,6 +27,9 @@ function BookShelves() {
                     <p>name</p>
                     <small>Ipsum duis nulla non reprehenderit labore incididunt.Ex amet sit minim et. </small>
                     <p>ksh 1000</p>
+                    <div className='div-button'>
+                    <button class="delete-button">Delete</button>
+                    </div>
                 </div>
         </div>
 
@@ -35,6 +41,9 @@ function BookShelves() {
                     <p>name</p>
                     <small>Ipsum duis nulla non reprehenderit labore incididunt.Ex amet sit minim et. </small>
                     <p>ksh 1000</p>
+                    <div className='div-button'>
+                      <button class="delete-button">Delete</button>
+                      </div>
                 </div>
         </div>
       </div>

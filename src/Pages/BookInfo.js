@@ -24,9 +24,10 @@ return (
                         <p><span style={{fontWeight: 'bold'}}>Category:</span> book.category</p>
                         <p><span style={{fontWeight: 'bold'}}>Description:</span> book.description</p>
                         <p><span style={{fontWeight: 'bold'}}>Price:</span> $book.price</p>
-                        <button>Buy Now</button>
-                        <button>Delete</button>
-                        <button onClick={() => console.log('Back to home')}>Back Home</button>
+                        <button className='back' onClick={() => console.log('Back to home')}>Back Home</button>
+                        <button className='buy'>Buy Now</button>
+                        <button className='delete'>Delete</button>
+                      
                     </div>
                 </div>
        
@@ -37,4 +38,3 @@ return (
 }
 
 export default BookInfo;
-
