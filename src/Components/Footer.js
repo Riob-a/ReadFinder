@@ -6,10 +6,10 @@ function Footer(){
     return(
         <div className="">
 
-         <footer class="footer p-3 bg"> 
-            <div class="container"> 
-              <div class=""> 
-                <div class=""> 
+         <footer className="footer p-3 bg"> 
+            <div className="container"> 
+              <div className=""> 
+                <div className=""> 
                     <h2 className="text-center fs-6">ReadFinder copyright-2024</h2> 
                 </div> 
               </div> 
