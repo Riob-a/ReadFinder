@@ -1,17 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '../Components/Header';
 import Filter from '../Components/Filter';
 import BookList from '../Components/BookList';
 
 function HomePage({ books, handleBuy }) {
-  const [bookData,setBookData]=useState({})
-
-const sortBook = (c) => {
-  const sortedBooks = [...books].sort(() => {
-   
-  });
-  setBookData(sortedBooks);
-};
 
   return (
     <div>
