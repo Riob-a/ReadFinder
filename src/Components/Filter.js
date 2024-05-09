@@ -14,7 +14,11 @@ function Filter({ sortBooksByCategory} ) {
       <button onClick={()=>handleSort('All')} >All</button>
       <button onClick={()=>handleSort('Action')}>Action</button>
       <button onClick={()=>handleSort('Fantasy')} >Fantasy</button>
-      <button onClick={()=>handleSort('Drama')}>Drama</button>
+      <button onClick={()=>handleSort('Finance')}>Finance</button>
+      <button onClick={()=>handleSort('Horror')}>Horror</button>
+      <button onClick={()=>handleSort('Thriller')}>Thriller</button>
+      <button onClick={()=>handleSort('Theological')}>Theological</button>
+      
     </div>
    </div>
   );
