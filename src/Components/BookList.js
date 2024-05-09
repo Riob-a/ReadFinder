@@ -32,5 +32,3 @@ function BookList({ book, handleBuy }) {
     }
     
     export default BookList;
-
-
