@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../Components/Header';
 import Filter from '../Components/Filter';
 import BookList from '../Components/BookList';
 
 function HomePage({ books, handleBuy }) {
+  const [bookData, setBookData] = useState({});
+
+const sortBooksByCategory = () => {
+  const sortedBooks = [...bookData].sort((a, b) => {
+    return a.category.localeCompare(b.category);
+  });
+  setBookData(sortedBooks);
+};
 
   return (
     <div>
       <Header />
-      <Filter/>
+      <Filter sortBooksByCategory={sortBooksByCategory}/>
       <div className="homepage-container">
         <h2>Unlimited Books</h2>
 
