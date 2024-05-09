@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
@@ -14,7 +14,7 @@ function App() {
   
   const handlePost = async (data) => {
     if (Object.keys(data).length > 0) {
-      fetch("http://localhost:3001/books", {
+      fetch("http://localhost:3000/books", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -28,6 +28,7 @@ function App() {
           return res.json();
         })
         .then((data) => {
+          getBooks()
           console.log("Book successfully added:", data);
         })
         .catch((error) => {
@@ -41,7 +42,7 @@ function App() {
 
   const getBooks = async () => {
     try {
-      const response = await fetch("https://project2-db.onrender.com/books");
+      const response = await fetch("http://localhost:3000/books");
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }

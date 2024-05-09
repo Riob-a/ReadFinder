@@ -42,8 +42,8 @@ function FormData({ handlePost }) {
                 <p>Book Details</p>
 
                 <label>Picture:</label>
-                <input type="text" placeholder="Add Image Url" id="image" value={formData.picture} onChange={handleChange}
-                    accept="image/*" />{formData.picture}  <br /> <br />
+                <input type="text" placeholder="Add Image Url" id="picture" value={formData.picture} onChange={handleChange}
+                    accept="image/*" /> <br /> <br />
 
                 <label>Title:</label>
                 <input type="text" placeholder="Title" id="title" value={formData.title} onChange={handleChange} />{" "}
