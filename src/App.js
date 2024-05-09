@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
@@ -14,7 +14,7 @@ function App() {
   
   const handlePost = async (data) => {
     if (Object.keys(data).length > 0) {
-      fetch("https://project2-db.onrender.com/books", {
+      fetch("http://localhost:3001/books", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
