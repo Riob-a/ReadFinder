@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function Filter() {
-
-function SortBar({ sortBots }) {               // from bot collection
+function Filter({ sortBooksByCategory} ) {
+           
     const handleSort = (c) => {
-      sortBots(c);
+      sortBooksByCategory (c);
     }
 
 
@@ -15,11 +14,10 @@ function SortBar({ sortBots }) {               // from bot collection
       <button onClick={()=>handleSort('All')} >All</button>
       <button onClick={()=>handleSort('Action')}>Action</button>
       <button onClick={()=>handleSort('Fantasy')} >Fantasy</button>
-      <button onClick={()=>handleSort('Action')}>Action</button>
       <button onClick={()=>handleSort('Drama')}>Drama</button>
     </div>
    </div>
   );
-}}
+}
 
 export default Filter;

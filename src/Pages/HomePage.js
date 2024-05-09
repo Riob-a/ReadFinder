@@ -4,11 +4,11 @@ import Filter from '../Components/Filter';
 import BookList from '../Components/BookList';
 
 function HomePage({ books, handleBuy }) {
-  const [bookData,setBookData]=useState({})
+  const [bookData, setBookData] = useState({});
 
-const sortBook = (c) => {
-  const sortedBooks = [...books].sort(() => {
-   
+const sortBooksByCategory = () => {
+  const sortedBooks = [...bookData].sort((a, b) => {
+    return a.category.localeCompare(b.category);
   });
   setBookData(sortedBooks);
 };
@@ -16,7 +16,7 @@ const sortBook = (c) => {
   return (
     <div>
       <Header />
-      <Filter/>
+      <Filter sortBooksByCategory={sortBooksByCategory}/>
       <div className="homepage-container">
         <h2>Unlimited Books</h2>
 
