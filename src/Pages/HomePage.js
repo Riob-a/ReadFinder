@@ -1,33 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import Header from '../Components/Header';
 import Filter from '../Components/Filter';
 import BookList from '../Components/BookList';
 
 function HomePage({ books, handleBuy }) {
-  const [bookData, setBookData] = useState({});
+  const [filteredBooks, setFilteredBooks] = useState([]);
 
-const sortBooksByCategory = () => {
-  const sortedBooks = [...bookData].sort((a, b) => {
-    return a.category.localeCompare(b.category);
-  });
-  setBookData(sortedBooks);
-};
+  const sortBooksByCategory = (category) => {
+    if (category === 'All') {
+      setFilteredBooks(books);
+    } else {
+      const filtered = books.filter(book => book.category === category);
+      setFilteredBooks(filtered);
+    }
+  };
+
+  useEffect(() => {
+    setFilteredBooks(books); // Initialize with all books
+  }, [books]);
 
   return (
     <div>
       <Header />
-      <Filter sortBooksByCategory={sortBooksByCategory}/>
+      <Filter sortBooksByCategory={sortBooksByCategory} />
       <div className="homepage-container">
         <h2>Unlimited Books</h2>
-
-    <div className="column-grid">
-      {books.map((book) => (
-       <BookList key={book.id} book={book} handleBuy={(bookId, bookDetails) => handleBuy(bookId, bookDetails)}/>
-      ))}
+        <div className="column-grid">
+          {filteredBooks.map((book) => (
+            <BookList key={book.id} book={book} handleBuy={(bookId, bookDetails) => handleBuy(bookId, bookDetails)} />
+          ))}
+        </div>
+      </div>
     </div>
-  </div>
-</div>
   );
 }
 
-export default HomePage; 
+export default HomePage
