@@ -1,11 +1,11 @@
 import React from 'react';
 
 function Filter({ sortBooksByCategory} ) {
-           
+
     const handleSort = (c) => {
       sortBooksByCategory (c);
     }
-
+          
 
   return (
     <div className="container">
