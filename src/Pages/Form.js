@@ -1,37 +1,83 @@
 import React from "react";
-import "./Form.css"
+import "./Form.css";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function FormData(){
-return(
-    <div>
-       
-    <form >
-        <p>Book Details</p>
+function FormData({ handlePost }) {
+    const navigate=useNavigate()
+    const [formData, setFormData] = useState({
+        picture: "",
+        title: "",
+        category: "",
+        description: "",
+        price: ""
+    });
 
-        <label>Image:</label>
-        <input type="text" placeholder="Add Image Url" id="image" accept="image/*"/> <br/> <br/>
+const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevFormData) => ({
+        ...prevFormData,
+        [id]: value
+    }));
+};
 
-        <label>Title:</label>
-        <input type="text" placeholder="Title"/>  <br/> <br/>
+const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("submitted", formData);
+    handlePost(formData);
+    // Clear the form after submission if needed
+    setFormData({
+        picture: "",
+        title: "",
+        category: "",
+        description: "",
+        price: ""
+    });
+    navigate("/")
+};
 
-       <label>Category:</label>
-        <input type="text" placeholder="Category"/> <br/> <br/>
+return (
+  <div className='form-container' id="form">
+    <div className='div-container'>
+        <form onSubmit={handleSubmit}>
+            <h3>Book Details</h3>
 
-        <label>Description:</label>
-        <input type="text" placeholder="Description"/> <br/> <br/>
+            <div className='div-input'>
+                <label>Picture:</label>
+                <input type="text" placeholder="Add Image Url" id="picture" value={formData.picture} onChange={handleChange}
+                    accept="image/*" /> 
+            </div>
 
-        <label>Price:</label>
-        <input type="text"placeholder="Price"/> <br/> <br/>
-      
+            <div className='div-input'>
+                <label>Title:</label>
+                <input type="text" placeholder="Title" id="title" value={formData.title} onChange={handleChange} />{" "}
+            </div>
 
+            <div className='div-input'>
+                <label>Category:</label>
+                <input type="text" placeholder="Category" id="category" value={formData.category} onChange={handleChange} />{" "}
+            </div>
 
-        <button id="btn" type="submit">Add a book</button> <br/> <br/>
+            <div className='div-input'>
+                <label>Description:</label>
+                <input type="text" placeholder="Description" id="description" value={formData.description} onChange={handleChange} />{" "}
+                
+            </div>
 
-        <footer id="footerform">Get to add a book of your choice.</footer>
-    </form>
-   
+            <div className='div-input'>
+                <label>Price:</label>
+                <input type="text" placeholder="Price" id="price" value={formData.price} onChange={handleChange} />{" "}
+                
+            </div>
+
+            <div className='div-input'>
+            <button id="btn" type="submit"> Add a book </button> {" "}
+            </div>
+        </form>
+        <footer id="footerform">Get to add a book of your choice</footer>
     </div>
-)
-
+   </div>
+);
 }
-export default FormData
+
+export default FormData; 

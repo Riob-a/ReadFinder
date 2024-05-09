@@ -1,56 +1,36 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-function BookList() {
-  return (
-  <div className="column-grid">
-     <div className="book-div">
-        <div className="image-container">
-            <img className='image' alt="" src='https://github.com/MohamedAhmeDdev/eBook-Next-/blob/master/server/Images/1671463217357.jpg?raw=true' />
-        </div>
-        <div className="item-container">
-            <p>name</p>
-            <small>Ipsum duis nulla non reprehenderit labore incididunt.Ex amet sit minim et. </small>
-            <p>ksh 1000</p>
-        <div className='div-button'>
-        <button class="buy-button">Buy Now</button>
-        </div>
-        </div>
-    </div>
+function BookList({ book, handleBuy }) {
+  const handleBuyClick = () => {
+    const { id, category, picture ,title, description, price } = book;
+    const bookDetails = {id, title,category, picture, description, price }; 
+    handleBuy(id, bookDetails);
+  };
 
 
-    <div className="book-div">
-        <div className="image-container">
-            <img className='image' alt="" src='https://github.com/MohamedAhmeDdev/eBook-Next-/blob/master/server/Images/1671463217357.jpg?raw=true' />
-        </div>
-        <div className="item-container">
-            <p>name</p>
-            <small>Ipsum duis nulla non reprehenderit labore incididunt.Ex amet sit minim et. </small>
-            <p>ksh 1000</p>
-        <div className='div-button'>
-        <button class="buy-button">Buy Now</button>
-        </div>
-        </div>
-    </div>
+    return (
+      <Link to={`bookinfo/${book.id}`}>
+        <div className="book-div">
+          <div className="image-container">
+            <img className="image" alt="" src={book.picture} />
+          </div>
+          <div className="item-container">
 
-    <div className="book-div">
-        <div className="image-container">
-            <img className='image' alt="" src='https://github.com/MohamedAhmeDdev/eBook-Next-/blob/master/server/Images/1671463217357.jpg?raw=true' />
+           
+              {" "}
+              <p className='title'>{book.title}</p>
+              
+            <p>Ksh {book.price}</p>
+            <div className="div-button">
+              <button className="buy-button"onClick={handleBuyClick}>Buy Now</button>
+            </div>
+          </div>
         </div>
-        <div className="item-container">
-            <p>name</p>
-            <small>Ipsum duis nulla non reprehenderit labore incididunt.Ex amet sit minim et. </small>
-            <p>ksh 1000</p>
-        <div className='div-button'>
-        <button class="buy-button">Buy Now</button>
-        </div>
-        </div>
-    </div>
-  </div>
-
-  )
-}
-
-export default BookList
-
+        </Link>
+      );
+    }
+    
+    export default BookList;
 
 
