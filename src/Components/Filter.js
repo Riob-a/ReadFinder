@@ -1,22 +1,22 @@
 import React from 'react';
 
-function Filter() {
-  const filters = ["Fantasy", "Fiction", "Action", "Romance", "Thriller",  ];
+function Filter({ sortBooksByCategory} ) {
+           
+    const handleSort = (c) => {
+      sortBooksByCategory (c);
+    }
+
 
   return (
-    <div className='filter-container'>
-        <div className="filter-div">
-            <div className='filter-box'>
-              {filters.map((filter, index) => (
-                    <div className="checkbox-item" key={index}>
-                      <input type="checkbox" id={filter} value={filter} />
-                      <label htmlFor={filter}>{filter}</label>
-                    </div>
-                  ))}
-            </div>
-          <button>Filter</button>
-        </div>
+    <div className="container">
+      <p>Filter Book By Category</p>
+    <div className='button-container'> 
+      <button onClick={()=>handleSort('All')} >All</button>
+      <button onClick={()=>handleSort('Action')}>Action</button>
+      <button onClick={()=>handleSort('Fantasy')} >Fantasy</button>
+      <button onClick={()=>handleSort('Drama')}>Drama</button>
     </div>
+   </div>
   );
 }
 

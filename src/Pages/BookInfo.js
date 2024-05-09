@@ -8,8 +8,8 @@ function BookInfo({getBooks,handleBuyNow}) {
     const [book, setBook] = useState([]);
     const {id} = useParams()
     const navigate = useNavigate()
-//get bots by id inafaa ku changiwa (derrick)
-    const getBotById = async () => {
+
+    const getBookById = async () => {
         try {
           const response = await fetch(`https://project2-db.onrender.com/books/${id}`);
           if (!response.ok) {
@@ -23,7 +23,7 @@ function BookInfo({getBooks,handleBuyNow}) {
       };
     
       useEffect(() => {
-        getBotById();
+        getBookById();
       }, []);
 
 
@@ -99,3 +99,4 @@ return (
 }
 
 export default BookInfo;
+
