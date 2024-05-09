@@ -4,7 +4,6 @@ import Filter from '../Components/Filter';
 import BookList from '../Components/BookList';
 
 function HomePage({ books }) {
-
   return (
     <div>
       <Header />
