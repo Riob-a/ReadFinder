@@ -13,62 +13,71 @@ function FormData({ handlePost }) {
         price: ""
     });
 
-    const handleChange = (e) => {
-        const { id, value } = e.target;
-        setFormData((prevFormData) => ({
-            ...prevFormData,
-            [id]: value
-        }));
-    };
+const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevFormData) => ({
+        ...prevFormData,
+        [id]: value
+    }));
+};
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("submitted", formData);
-        handlePost(formData);
-        // Clear the form after submission if needed
-        setFormData({
-            picture: "",
-            title: "",
-            category: "",
-            description: "",
-            price: ""
-        });
-        navigate("/")
-    };
+const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("submitted", formData);
+    handlePost(formData);
+    // Clear the form after submission if needed
+    setFormData({
+        picture: "",
+        title: "",
+        category: "",
+        description: "",
+        price: ""
+    });
+    navigate("/")
+};
 
-    return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <p>Book Details</p>
+return (
+  <div className='form-container' id="form">
+    <div className='div-container'>
+        <form onSubmit={handleSubmit}>
+            <h3>Book Details</h3>
 
+            <div className='div-input'>
                 <label>Picture:</label>
                 <input type="text" placeholder="Add Image Url" id="picture" value={formData.picture} onChange={handleChange}
-                    accept="image/*" /> <br /> <br />
+                    accept="image/*" /> 
+            </div>
 
+            <div className='div-input'>
                 <label>Title:</label>
                 <input type="text" placeholder="Title" id="title" value={formData.title} onChange={handleChange} />{" "}
-                <br /> <br />
+            </div>
 
+            <div className='div-input'>
                 <label>Category:</label>
                 <input type="text" placeholder="Category" id="category" value={formData.category} onChange={handleChange} />{" "}
-                <br /> <br />
+            </div>
 
+            <div className='div-input'>
                 <label>Description:</label>
                 <input type="text" placeholder="Description" id="description" value={formData.description} onChange={handleChange} />{" "}
-                <br /> <br />
+                
+            </div>
 
+            <div className='div-input'>
                 <label>Price:</label>
                 <input type="text" placeholder="Price" id="price" value={formData.price} onChange={handleChange} />{" "}
-                <br /> <br />
+                
+            </div>
 
-              
-                <button id="btn" type="submit"> Add a book </button> {" "}
-                <br /> <br />
-
-                <footer id="footerform">Get to add a book of your choice.</footer>
-            </form>
-        </div>
-    );
+            <div className='div-input'>
+            <button id="btn" type="submit"> Add a book </button> {" "}
+            </div>
+        </form>
+        <footer id="footerform">Get to add a book of your choice</footer>
+    </div>
+   </div>
+);
 }
 
-export default FormData;
+export default FormData; 
