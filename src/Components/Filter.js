@@ -7,6 +7,7 @@ function SortBar({ sortBots }) {               // from bot collection
       sortBots(c);
     }
 
+
   return (
     <div className="container">
       <p>Filter Book By Category</p>

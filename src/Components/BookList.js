@@ -10,22 +10,24 @@ function BookList({ book, handleBuy }) {
 
 
     return (
+      <Link to={`bookinfo/${book.id}`}>
         <div className="book-div">
           <div className="image-container">
             <img className="image" alt="" src={book.picture} />
           </div>
           <div className="item-container">
-            <p>{book.title}</p>
-            <Link to={`bookinfo/${book.id}`}>
+
+           
               {" "}
-              <small>{book.description}</small>
-              </Link>
-            <p>Ksh: {book.price}</p>
+              <p className='title'>{book.title}</p>
+              
+            <p>Ksh {book.price}</p>
             <div className="div-button">
               <button className="buy-button"onClick={handleBuyClick}>Buy Now</button>
             </div>
           </div>
         </div>
+        </Link>
       );
     }
     

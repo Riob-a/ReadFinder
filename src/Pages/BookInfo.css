@@ -1,44 +1,63 @@
 /* BookInfo.css */
 .h1 {
     text-align: center;
+    font-size: 35px;
+    padding: 20px;
 }
 
 .books {
-    text-align: center;
-    align-items: center;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    display: flex;
+align-items: center;
+justify-content: center;
 }
-
+.div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .book {
+    margin-bottom: 30px;
+    width: 700px;
     border: 1px solid #ddd;
     padding: 20px;
     border-radius: 8px;
     background-color: #f9f9f9;
 }
 
+.image-div{
+    text-align: center;
+}
+
 .book img {
-    width: 10%;
+    width: 20%;
     max-height: 200px;
     object-fit: cover;
     border-radius: 8px;
 }
 
 .book-details {
-    margin-top: 10px;
+    margin-top: 25px;
 }
 
 .book-details h2 {
+    text-align: center;
     font-size: 1.5rem;
     margin-bottom: 5px;
 }
 
 .book-details p {
-    margin: 5px 0;
-}
+    text-align: center;
 
-.book-details button {
+}
+.description{
+    font-weight: lighter;
+}
+.button-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button-div button {
     border: none;
     padding: 5px 10px;
     border-radius: 5px;

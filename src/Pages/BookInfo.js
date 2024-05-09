@@ -8,7 +8,7 @@ function BookInfo({getBooks,handleBuyNow}) {
     const [book, setBook] = useState([]);
     const {id} = useParams()
     const navigate = useNavigate()
-
+//get bots by id inafaa ku changiwa (derrick)
     const getBotById = async () => {
         try {
           const response = await fetch(`https://project2-db.onrender.com/books/${id}`);
@@ -62,25 +62,37 @@ return (
     <div>
         <h1 className='h1'>Book Information</h1>
         <div className="books">
-          
-                <div className="book">
+               <div className='div'>
+               <div className="book">
+                    <div className='image-div'>
                     <img src={book.picture} />
+                    </div>
                     <div className="book-details">
                         <h2>{book.title}</h2>
-                        <p><span style={{fontWeight: 'bold'}}>Category:</span> {book.category}</p>
-                        <p><span style={{fontWeight: 'bold'}}>Description:</span> {book.description}</p>
-                        <p><span style={{fontWeight: 'bold'}}>Price:</span> ${book.price}</p>
+                        <p>
+                          <span style={{fontWeight: 'bold'}}>Category:</span>{" "}
+                          <span style={{fontWeight: 'lighter'}}>{book.category}</span>
+                        </p>
+                        <p className="description">
+                          <span style={{fontWeight: 'bold' , textWrap: 'nowrap'}}>Description:</span>{" "}
+                          <span style={{fontWeight: 'lighter'}}>{book.description}</span>
+                        </p>
+                        <p>
+                          <span style={{fontWeight: 'bold'}}>Price:</span>{" "}
+                          <span style={{fontWeight: 'lighter'}} >Ksh {book.price}</span>
+                        </p>
+                    </div>
+                    <div className='button-div'>
                         <Link to='/'>
                          <button className='back'>Back Home</button>
                         </Link>
                         <button className="buy" onClick={() => buyNow(book.id)}>Buy Now</button>
 
                         <button className='delete' onClick={() => handleDelete(book.id)}>Delete</button>
-                      
                     </div>
                 </div>
-       
-   
+               </div>
+         
         </div>
     </div>
 );
