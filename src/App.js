@@ -16,7 +16,7 @@ function App() {
   
   const handlePost = async (data) => {
     if (Object.keys(data).length > 0) {
-      fetch("http://localhost:3000/books", {
+      fetch("https://project2-db.onrender.com/books", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -31,7 +31,6 @@ function App() {
         })
         .then((data) => {
           getBooks()
-          console.log("Book successfully added:", data);
         })
         .catch((error) => {
           console.error("Error adding book:", error);
@@ -44,7 +43,7 @@ function App() {
 
   const getBooks = async () => {
     try {
-      const response = await fetch("http://localhost:3000/books");
+      const response = await fetch("https://project2-db.onrender.com/books");
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
