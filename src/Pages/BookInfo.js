@@ -33,14 +33,14 @@ function BookInfo({getBooks,handleBuyNow}) {
               method: 'DELETE',
             });
             if (!deleteResponse.ok) {
-              throw new Error("Failed to delete bot from backend");
+              throw new Error("Failed to delete book from backend");
             }
       
            alert("Book Deleted successfully!");
              navigate("/")
              getBooks()
           } catch (error) {
-            console.error('Error discharging bot:', error);
+            console.error('Error discharging book:', error);
           }
     };
     
