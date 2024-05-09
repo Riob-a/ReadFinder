@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function Filter() {
 
-function SortBar({ sortBots }) {               // from bot collection
+function SortBar({ sortBots }) {              
     const handleSort = (c) => {
       sortBots(c);
     }
