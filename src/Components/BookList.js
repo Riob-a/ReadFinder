@@ -16,12 +16,11 @@ function BookList({ book, handleBuy }) {
             <img className="image" alt="" src={book.picture} />
           </div>
           <div className="item-container">
-
-           
               {" "}
               <p className='title'>{book.title}</p>
               
             <p>Ksh {book.price}</p>
+            <p>Category: {book.category}</p>
             <div className="div-button">
               <button className="buy-button"onClick={handleBuyClick}>Buy Now</button>
             </div>
