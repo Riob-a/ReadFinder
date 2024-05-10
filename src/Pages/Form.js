@@ -33,6 +33,7 @@ const handleSubmit = (e) => {
         description: "",
         price: ""
     });
+    alert("Book successfully added:");
     navigate("/")
 };
 

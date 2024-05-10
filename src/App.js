@@ -10,11 +10,13 @@ import BookInfo from './Pages/BookInfo';
 
 
 function App() {
+
+  //Adds a book
   const [books, setBooks] = useState([]);
   
   const handlePost = async (data) => {
     if (Object.keys(data).length > 0) {
-      fetch("http://localhost:3000/books", {
+      fetch("https://project2-db.onrender.com/books", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -29,7 +31,6 @@ function App() {
         })
         .then((data) => {
           getBooks()
-          console.log("Book successfully added:", data);
         })
         .catch((error) => {
           console.error("Error adding book:", error);
@@ -42,7 +43,7 @@ function App() {
 
   const getBooks = async () => {
     try {
-      const response = await fetch("http://localhost:3000/books");
+      const response = await fetch("https://project2-db.onrender.com/books");
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -95,7 +96,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<HomePage books={books} handleBuy={handleBuy} />}/>
+          <Route path="/" element={<HomePage books={books} handleBuy={handleBuy}/>}/>
           <Route path='/form' element={<FormData handlePost={handlePost} />} />
           <Route path="/MyShelves" element={<BookShelves />} />
           <Route path="/bookinfo/:id"  element={<BookInfo handleBuyNow={handleBuy} getBooks={getBooks} />}/>
