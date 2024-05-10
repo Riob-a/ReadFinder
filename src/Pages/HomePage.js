@@ -5,7 +5,6 @@ import BookList from '../Components/BookList';
 
 function HomePage({ books, handleBuy }) {
   const [filteredBooks, setFilteredBooks] = useState([]);
-  
 
   const sortBooksByCategory = (category) => {
     if (category === 'All') {
