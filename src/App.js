@@ -96,7 +96,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<HomePage books={books} handleBuy={handleBuy} />}/>
+          <Route path="/" element={<HomePage books={books} handleBuy={handleBuy}/>}/>
           <Route path='/form' element={<FormData handlePost={handlePost} />} />
           <Route path="/MyShelves" element={<BookShelves />} />
           <Route path="/bookinfo/:id"  element={<BookInfo handleBuyNow={handleBuy} getBooks={getBooks} />}/>
